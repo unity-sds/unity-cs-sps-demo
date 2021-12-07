@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos:7 as base
 
 ARG HOME=/root
 ARG VERSION="3.9.5"
@@ -16,6 +16,7 @@ RUN yum install gcc openssl-devel bzip2-devel libffi-devel openldap-devel readli
   ln -s /usr/local/bin/python${VERSION:0:3} /usr/local/bin/python3 && \
   ln -s /usr/local/bin/pip${VERSION:0:3} /usr/local/bin/pip3 && \
   pip3 install --no-cache-dir --upgrade pip && \
+  pip install setuptools && \
   pip3 install --no-cache-dir gnureadline && \
   rm -f /tmp/Python-${VERSION}.tgz && \
   rm -rf /tmp/Python-${VERSION}
@@ -37,6 +38,11 @@ RUN cd $HOME && \
 # osaka/  # installs Werkzeug 2.0.1
 # https://github.com/hysds/osaka/blob/develop/setup.py#L28
 # https://github.com/spulec/moto/blob/master/setup.py#L39
+
+FROM base as test
+RUN cd $HOME/prov_es && python3 setup.py test
+
+FROM base as package
 
 WORKDIR $HOME
 CMD ["/bin/bash"]
