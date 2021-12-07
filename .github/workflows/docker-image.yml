@@ -2,9 +2,9 @@ name: Docker Image CI
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: hysds-core
-  MOZART_NAME: hysds-mozart
-  CELERY_NAME: celery-tasks
+  IMAGE_NAME: ${{ github.repository }}/hysds-core
+  MOZART_NAME: ${{ github.repository }}/hysds-mozart
+  CELERY_NAME: ${{ github.repository }}/celery-tasks
 
 on:
   push:
