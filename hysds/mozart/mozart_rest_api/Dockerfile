@@ -1,4 +1,4 @@
-FROM hysds-core:unity-v0.0.1
+FROM ghcr.io/buggtb/unity-sps-prototype/hysds-core:main
 
 ARG HOME /root
 WORKDIR $HOME
