@@ -30,7 +30,7 @@ hysds-core           unity-v0.0.1         82a09dc4a50a   About a minute ago   99
 celery-tasks         unity-v0.0.1         a894468c7101   31 minutes ago       189MB
 ```
 
-# Running HySDS (Mozart) in K8
+# Running HySDS (Mozart) in K8S
 
 #### Create the ConfigMap for `celeryconfig.py`
 
