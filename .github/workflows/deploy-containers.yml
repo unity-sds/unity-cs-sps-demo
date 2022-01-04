@@ -8,15 +8,9 @@ jobs:
   deployment:
     runs-on: 'ubuntu-latest'
     steps:
-    - uses: actions/checkout@v1
-
-    - name: 'Deploy'
-      uses: 'deliverybot/helm@v1'
-      with:
-        release: 'mozart-es'
-        namespace: 'default'
-        chart: 'elastic/elasticsearch'
-        token: '${{ github.token }}'
-        value_files: [ "hysds/mozart/elasticsearch/values-override.yml" ]
-      env:
-        KUBECONFIG_FILE: '${{ secrets.KUBECONFIG }}'
+      - uses: actions/checkout@v1
+      - name: Deploy
+        uses: WyriHaximus/github-action-helm3@v2
+        with:
+          exec: helm upgrade mozart-es --install --wait --atomic --namespace=default -f=./hysds/mozart/elasticsearch/values-override.yml
+          kubeconfig: '${{ secrets.KUBECONFIG }}'
