@@ -14,9 +14,6 @@ jobs:
         namespace: 'default'
         chart: 'elastic/elasticsearch'
         token: '${{ github.token }}'
-        value-files: >-
-        [
-          "hysds/mozart/elasticsearch/values-override.yml"
-        ]
+        value-files: [ "hysds/mozart/elasticsearch/values-override.yml" ]
       env:
         KUBECONFIG_FILE: '${{ secrets.KUBECONFIG }}'
