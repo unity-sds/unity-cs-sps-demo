@@ -12,5 +12,5 @@ jobs:
       - name: Deploy
         uses: WyriHaximus/github-action-helm3@v2
         with:
-          exec: helm upgrade mozart-es --install --wait --atomic --namespace=default -f=./hysds/mozart/elasticsearch/values-override.yml
+          exec: helm upgrade mozart-es elastic/elasticsearch --install --wait --atomic --namespace=default -f=./hysds/mozart/elasticsearch/values-override.yml --version 7.9.3
           kubeconfig: '${{ secrets.KUBECONFIG }}'
