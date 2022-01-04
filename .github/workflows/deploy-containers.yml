@@ -1,0 +1,22 @@
+name: Deploy
+on: ['deployment']
+
+jobs:
+  deployment:
+    runs-on: 'ubuntu-latest'
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: 'Deploy'
+      uses: 'deliverybot/helm@v1'
+      with:
+        release: 'mozart-es'
+        namespace: 'default'
+        chart: 'elastic/elasticsearch'
+        token: '${{ github.token }}'
+        value-files: >-
+        [
+          "hysds/mozart/elasticsearch/values-override.yml"
+        ]
+      env:
+        KUBECONFIG_FILE: '${{ secrets.KUBECONFIG }}'
