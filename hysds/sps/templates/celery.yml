@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: celery-tasks
+  labels:
+    name: celery-tasks
+spec:
+  containers:
+    - name: celery-tasks
+      image: ghcr.io/buggtb/unity-sps-prototype/celery-tasks:main
+      imagePullPolicy: IfNotPresent
+      env:
+        - name: ELASTIC_URL
+          value: "{{ .Values.elastic }}"

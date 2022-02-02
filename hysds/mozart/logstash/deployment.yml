@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: logstash
-          image: logstash:7.9.3
+          image: logstash:7.17.0
           command: ["bin/logstash", "-f", "/usr/share/logstash/logstash.conf"]
           ports:
             - containerPort: 5044

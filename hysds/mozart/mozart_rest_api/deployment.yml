@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - name: mozart
-          image: hysds-mozart:unity-v0.0.1
+          image: ghcr.io/buggtb/unity-sps-prototype/hysds-mozart:main
           # env:
           #   - name: WORKERS
           #     value: "4"
