@@ -75,4 +75,9 @@ resource "aws_security_group" "es" {
     protocol  = "tcp"
     security_groups = [aws_security_group.ingress-all-test.id]
   }
+  ingress {
+    from_port = 443
+    to_port = 443
+    protocol = "tcp"
+  }
 }

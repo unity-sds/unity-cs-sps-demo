@@ -30,6 +30,7 @@ terraform {
     bucket = "unity-demo-state"
     key    = "demo/state"
     region = "us-east-1"
+    profile = "saml-pub"
   }
 }
 

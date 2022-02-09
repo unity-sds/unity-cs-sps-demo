@@ -8,7 +8,7 @@ provider "helm" {
 resource "helm_release" "mozart" {
   name       = "mozart"
   wait = false
-  chart      = "../sps-fork/hysds/sps/"
+  chart      = "../hysds/sps/"
 
   set {
     name  = "elastic"
