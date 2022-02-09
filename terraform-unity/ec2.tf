@@ -12,13 +12,13 @@ resource "aws_eip" "ip-test-env3" {
 }
 
 resource "aws_instance" "unity-ec2-instance" {
-  ami = var.ami_id
+  ami           = var.ami_id
   instance_type = "t3.xlarge"
-  key_name = var.ami_key_pair_name
+  key_name      = var.ami_key_pair_name
   #security_groups = ["${aws_security_group.ingress-all-test.id}"]
   vpc_security_group_ids = [aws_security_group.ingress-all-test.id]
   tags = {
-    Name = var.ami_name
+    Name       = var.ami_name
     Deployment = "unity-demo"
   }
   ebs_block_device {
@@ -29,12 +29,12 @@ resource "aws_instance" "unity-ec2-instance" {
 }
 
 resource "aws_instance" "unity-ec2-instance2" {
-  ami = var.ami_id
-  instance_type = "t3.xlarge"
-  key_name = var.ami_key_pair_name
+  ami                    = var.ami_id
+  instance_type          = "t3.xlarge"
+  key_name               = var.ami_key_pair_name
   vpc_security_group_ids = [aws_security_group.ingress-all-test.id]
   tags = {
-    Name = var.ami_name
+    Name       = var.ami_name
     Deployment = "unity-demo"
   }
   ebs_block_device {
@@ -45,13 +45,13 @@ resource "aws_instance" "unity-ec2-instance2" {
 }
 
 resource "aws_instance" "unity-ec2-instance3" {
-  ami = var.ami_id
-  instance_type = "t3.xlarge"
-  key_name = var.ami_key_pair_name
+  ami                    = var.ami_id
+  instance_type          = "t3.xlarge"
+  key_name               = var.ami_key_pair_name
   vpc_security_group_ids = [aws_security_group.ingress-all-test.id]
   #security_groups = ["${aws_security_group.ingress-all-test.id}"]
   tags = {
-    Name = var.ami_name
+    Name       = var.ami_name
     Deployment = "unity-demo"
   }
   ebs_block_device {

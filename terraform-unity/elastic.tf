@@ -3,8 +3,8 @@ resource "aws_elasticsearch_domain" "unity-sample" {
   elasticsearch_version = "7.10"
 
   cluster_config {
-    instance_type = "i2.xlarge.elasticsearch"
-    instance_count = 2
+    instance_type          = "i2.xlarge.elasticsearch"
+    instance_count         = 2
     zone_awareness_enabled = true
     zone_awareness_config {
       availability_zone_count = 2
@@ -23,16 +23,16 @@ resource "aws_elasticsearch_domain" "unity-sample" {
     ebs_enabled = false
   }
   advanced_security_options {
-    enabled = true
+    enabled                        = true
     internal_user_database_enabled = true
     master_user_options {
-      master_user_name = "unitymaster"
+      master_user_name     = "unitymaster"
       master_user_password = "Un1typa$$word"
     }
   }
 
   domain_endpoint_options {
-    enforce_https = true
+    enforce_https       = true
     tls_security_policy = "Policy-Min-TLS-1-2-2019-07"
   }
   node_to_node_encryption {
@@ -55,7 +55,7 @@ resource "aws_elasticsearch_domain" "unity-sample" {
 }
 CONFIG
   tags = {
-    Domain = "unity"
+    Domain     = "unity"
     Deployment = "unity-demo"
   }
 }
