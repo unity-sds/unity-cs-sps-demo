@@ -14,15 +14,23 @@ terraform {
       version = "2.1.0"
     }
 
+    cloud {
+      organization = "JPL-UNITY"
+
+      workspaces {
+        name = "unity-cs"
+      }
+    }
+
     null = {
       source  = "hashicorp/null"
       version = "3.1.0"
     }
 
-    # kubernetes = {
-    #   source  = "hashicorp/kubernetes"
-    #   version = ">= 2.0.1"
-    # }
+    kubernetes = {
+      source  = "hashicorp/kubernetes"
+      version = ">= 2.0.1"
+    }
   }
 
   required_version = ">= 0.14.9"
