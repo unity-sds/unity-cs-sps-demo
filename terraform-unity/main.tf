@@ -19,10 +19,10 @@ terraform {
       version = "3.1.0"
     }
 
-    kubernetes = {
-      source  = "hashicorp/kubernetes"
-      version = ">= 2.0.1"
-    }
+    # kubernetes = {
+    #   source  = "hashicorp/kubernetes"
+    #   version = ">= 2.0.1"
+    # }
   }
 
   required_version = ">= 0.14.9"
@@ -30,11 +30,11 @@ terraform {
     bucket = "unity-demo-state"
     key    = "demo/state"
     region = "us-east-1"
-    profile = "saml-pub"
+    profile = "jpl-unity-cs"
   }
 }
 
 provider "aws" {
-  profile = "saml-pub"
+  profile = "jpl-unity-cs"
 }
 
