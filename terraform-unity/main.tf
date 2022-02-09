@@ -14,14 +14,6 @@ terraform {
       version = "2.1.0"
     }
 
-    cloud {
-      organization = "JPL-UNITY"
-
-      workspaces {
-        name = "unity-cs"
-      }
-    }
-
     null = {
       source  = "hashicorp/null"
       version = "3.1.0"
@@ -34,11 +26,12 @@ terraform {
   }
 
   required_version = ">= 0.14.9"
-  backend "s3" {
-    bucket  = "unity-demo-state"
-    key     = "demo/state"
-    region  = "us-east-1"
-    profile = "jpl-unity-cs"
+  cloud {
+    organization = "JPL-UNITY"
+
+    workspaces {
+      name = "unity-cs"
+    }
   }
 }
 
