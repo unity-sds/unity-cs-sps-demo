@@ -4,6 +4,7 @@ resource "aws_vpc" "unity-test-env" {
   enable_dns_support = true
   tags = {
     Name = "unity-test-env"
+    Deployment = "unity-demo"
   }
 }
 
@@ -11,12 +12,18 @@ resource "aws_subnet" "subnet-uno" {
   cidr_block = cidrsubnet(aws_vpc.unity-test-env.cidr_block, 3, 1)
   vpc_id = aws_vpc.unity-test-env.id
   availability_zone = "us-east-1a"
+  tags = {
+    Deployment = "unity-demo"
+  }
 }
 
 resource "aws_subnet" "subnet-two" {
   cidr_block = cidrsubnet(aws_vpc.unity-test-env.cidr_block, 4, 1)
   vpc_id = aws_vpc.unity-test-env.id
   availability_zone = "us-east-1b"
+  tags = {
+    Deployment = "unity-demo"
+  }
 }
 
 resource "aws_route_table" "route-table-test-env" {
@@ -27,15 +34,23 @@ resource "aws_route_table" "route-table-test-env" {
   }
   tags = {
     Name = "test-env-route-table"
+    Deployment = "unity-demo"
+
   }
 }
 
 resource "aws_route_table_association" "subnet-association" {
   subnet_id      = aws_subnet.subnet-uno.id
   route_table_id = aws_route_table.route-table-test-env.id
+  tags = {
+    Deployment = "unity-demo"
+  }
 }
 
 resource "aws_route_table_association" "subnet-association2" {
   subnet_id      = aws_subnet.subnet-two.id
   route_table_id = aws_route_table.route-table-test-env.id
+  tags = {
+    Deployment = "unity-demo"
+  }
 }

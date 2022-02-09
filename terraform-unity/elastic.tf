@@ -56,6 +56,7 @@ resource "aws_elasticsearch_domain" "unity-sample" {
 CONFIG
   tags = {
     Domain = "unity"
+    Deployment = "unity-demo"
   }
 }
 

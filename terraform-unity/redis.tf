@@ -6,6 +6,9 @@ resource "aws_memorydb_cluster" "unity-db-sample" {
   security_group_ids       = [aws_security_group.redis_sg.id]
   snapshot_retention_limit = 7
   subnet_group_name        = aws_memorydb_subnet_group.example.name
+  tags = {
+    Deployment = "unity-demo"
+  }
 }
 
 resource "aws_memorydb_subnet_group" "example" {

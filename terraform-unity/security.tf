@@ -40,6 +40,9 @@ resource "aws_security_group" "ingress-all-test" {
     protocol = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  tags = {
+    Deployment = "unity-demo"
+  }
 }
 
 resource "aws_security_group" "redis_sg" {
@@ -86,5 +89,8 @@ resource "aws_security_group" "es" {
     to_port = 443
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
+  }
+  tags = {
+    Deployment = "unity-demo"
   }
 }
