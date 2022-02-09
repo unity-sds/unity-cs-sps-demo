@@ -54,6 +54,12 @@ resource "aws_security_group" "redis_sg" {
     #ipv6_cidr_blocks = ["::/0"]
     security_groups = [aws_security_group.ingress-all-test.id]
   }
+  ingress {
+    from_port = "6379"
+    to_port = "6379"
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
   egress {
     protocol         = "-1"
