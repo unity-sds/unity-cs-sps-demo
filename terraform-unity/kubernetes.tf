@@ -9,7 +9,7 @@ resource "helm_release" "mozart" {
   name  = "mozart"
   wait  = false
   chart = "../hysds/sps/"
-
+ 
   set {
     name  = "elastic"
     value = format("https://%s:443", aws_elasticsearch_domain.unity-sample.endpoint)
