@@ -1,15 +1,15 @@
-resource "aws_eip" "ip-test-env" {
-  instance = aws_instance.unity-ec2-instance.id
-  vpc      = true
-}
-resource "aws_eip" "ip-test-env2" {
-  instance = aws_instance.unity-ec2-instance2.id
-  vpc      = true
-}
-resource "aws_eip" "ip-test-env3" {
-  instance = aws_instance.unity-ec2-instance3.id
-  vpc      = true
-}
+# resource "aws_eip" "ip-test-env" {
+#   instance = aws_instance.unity-ec2-instance.id
+#   vpc      = true
+# }
+# resource "aws_eip" "ip-test-env2" {
+#   instance = aws_instance.unity-ec2-instance2.id
+#   vpc      = true
+# }
+# resource "aws_eip" "ip-test-env3" {
+#   instance = aws_instance.unity-ec2-instance3.id
+#   vpc      = true
+# }
 
 resource "aws_instance" "unity-ec2-instance" {
   ami           = var.ami_id
