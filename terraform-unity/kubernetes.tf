@@ -8,7 +8,8 @@ provider "helm" {
 resource "helm_release" "mozart" {
   name       = "mozart"
   wait = false
-  chart      = "../hysds/sps/"
+  repository = "https://unity-sds.github.io/unity-helm-repository"
+  chart      = "sps"
 
   set {
     name  = "elastic"
