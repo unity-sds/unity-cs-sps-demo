@@ -1,0 +1,73 @@
+<mxfile host="app.diagrams.net" modified="2022-02-22T17:01:33.888Z" agent="5.0 (Windows)" etag="ICcTd5cHW7S98Jc4dYnT" version="16.2.2" type="github">
+  <diagram id="bah-MyjWsm8QFEgChRpI" name="Page-1">
+    <mxGraphModel dx="3342" dy="1005" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ruRoCNYQxCO7ug4RH904-2" value="Kubernetes (EKS)" style="swimlane;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1140" width="440" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="ruRoCNYQxCO7ug4RH904-1" value="&lt;div&gt;Mozart&lt;/div&gt;&lt;div&gt;REST API&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="ruRoCNYQxCO7ug4RH904-2">
+          <mxGeometry x="55" y="130" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ruRoCNYQxCO7ug4RH904-3" value="Celery" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="ruRoCNYQxCO7ug4RH904-2">
+          <mxGeometry x="330" y="231" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ruRoCNYQxCO7ug4RH904-4" value="Rabbit MQ" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="ruRoCNYQxCO7ug4RH904-2">
+          <mxGeometry x="190" y="170" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ruRoCNYQxCO7ug4RH904-8" value="Load Balancer Service" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ruRoCNYQxCO7ug4RH904-2">
+          <mxGeometry x="50" y="40" width="360" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ruRoCNYQxCO7ug4RH904-9" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="ruRoCNYQxCO7ug4RH904-2" source="ruRoCNYQxCO7ug4RH904-1" target="ruRoCNYQxCO7ug4RH904-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="50" y="330" as="sourcePoint" />
+            <mxPoint x="100" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ruRoCNYQxCO7ug4RH904-10" value="Logstash" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="ruRoCNYQxCO7ug4RH904-2">
+          <mxGeometry x="60" y="231" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ruRoCNYQxCO7ug4RH904-14" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="ruRoCNYQxCO7ug4RH904-2" source="ruRoCNYQxCO7ug4RH904-4" target="ruRoCNYQxCO7ug4RH904-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="210" as="sourcePoint" />
+            <mxPoint x="590" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ruRoCNYQxCO7ug4RH904-5" value="&lt;div&gt;Elastic Search&lt;/div&gt;&lt;div&gt;(Amazon Open Search)&lt;br&gt;&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="90" y="1085" width="140" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="ruRoCNYQxCO7ug4RH904-7" value="Redis" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="90" y="1360" width="140" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="ruRoCNYQxCO7ug4RH904-12" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ruRoCNYQxCO7ug4RH904-7" target="ruRoCNYQxCO7ug4RH904-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="1490" as="sourcePoint" />
+            <mxPoint x="340" y="1440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ruRoCNYQxCO7ug4RH904-13" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1" target="ruRoCNYQxCO7ug4RH904-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="230" y="1450" as="sourcePoint" />
+            <mxPoint x="390" y="1450" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="710" y="1520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ruRoCNYQxCO7ug4RH904-15" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1.021;entryY=0.611;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="ruRoCNYQxCO7ug4RH904-10" target="ruRoCNYQxCO7ug4RH904-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="950" as="sourcePoint" />
+            <mxPoint x="610" y="900" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ruRoCNYQxCO7ug4RH904-16" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="ruRoCNYQxCO7ug4RH904-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="230" y="1150" as="sourcePoint" />
+            <mxPoint x="280" y="1100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

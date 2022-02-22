@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: mozart-settings
-data:
-  {{- (.Files.Glob "settings.cfg").AsConfig | nindent 2 }}

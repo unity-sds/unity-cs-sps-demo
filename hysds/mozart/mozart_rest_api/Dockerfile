@@ -1,4 +1,4 @@
-FROM ghcr.io/buggtb/unity-sps-prototype/hysds-core:main
+FROM ghcr.io/unity-sds/unity-cs-sps-demo/hysds-core:main
 
 ARG HOME /root
 WORKDIR $HOME
@@ -11,7 +11,7 @@ RUN pip3 install 'Flask<2.0.0' && \
   pip3 install 'flask-cors'
 
 RUN git clone https://github.com/hysds/mozart.git && \
-  cd mozart/ && \
+  cd mozart/ && git fetch origin && git checkout -b build 44ed1b70114d65d8fe10c56ce4ef22460764f882 &&\
   python3 setup.py install
 
 WORKDIR /root/mozart

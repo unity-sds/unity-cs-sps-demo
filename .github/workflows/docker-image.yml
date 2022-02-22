@@ -14,7 +14,7 @@ on:
 
 jobs:
 
-  build:
+  build-core:
 
     runs-on: ubuntu-latest
 
@@ -47,6 +47,18 @@ jobs:
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
         target: package
+
+  build-mozart:
+    runs-on: ubuntu-latest
+    needs: build-core
+    steps:
+    - uses: actions/checkout@v2
+    - name: Log in to the Container registry
+      uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
     - name: Extract metadata (tags, labels) for Docker Mozart
       id: metamozart
       uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
@@ -59,6 +71,18 @@ jobs:
         push: true
         tags: ${{ steps.metamozart.outputs.tags }}
         labels: ${{ steps.metamozart.outputs.labels }}
+
+  build-celery:
+    runs-on: ubuntu-latest
+    needs: build-core
+    steps:
+    - uses: actions/checkout@v2
+    - name: Log in to the Container registry
+      uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
     - name: Extract metadata (tags, labels) for Docker Celery
       id: metacelery
       uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
