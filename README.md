@@ -7,7 +7,7 @@ folder where our Helm templates form the crux of the deployment.
 
 This demo is designed to make use of a number of different services and demonstrate the interoperability between them each.
 
-![Alt text here](sps-demo.drawio.svg)
+![Unity SPS demo diagram](sps-demo.drawio.svg)
 
 This repository also has a [Github action](https://github.com/unity-sds/unity-cs-sps-demo/tree/main/.github/workflows)
 to build the containers required to deploy this project.
