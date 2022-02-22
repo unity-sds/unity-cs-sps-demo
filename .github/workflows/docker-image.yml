@@ -14,7 +14,7 @@ on:
 
 jobs:
 
-  build:
+  build-core:
 
     runs-on: ubuntu-latest
 
@@ -47,6 +47,10 @@ jobs:
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
         target: package
+
+  build-mozart:
+    runs-on: ubuntu-latest
+    steps:
     - name: Extract metadata (tags, labels) for Docker Mozart
       id: metamozart
       uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
@@ -59,6 +63,10 @@ jobs:
         push: true
         tags: ${{ steps.metamozart.outputs.tags }}
         labels: ${{ steps.metamozart.outputs.labels }}
+
+  build-celery:
+    runs-on: ubuntu-latest
+    steps:
     - name: Extract metadata (tags, labels) for Docker Celery
       id: metacelery
       uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
