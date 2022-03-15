@@ -30,7 +30,7 @@ terraform {
     organization = "JPL-UNITY"
 
     workspaces {
-      name = "unity-cs"
+      name = "unity-cs-mcp"
     }
   }
 }
