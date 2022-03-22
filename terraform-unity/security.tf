@@ -76,7 +76,7 @@ resource "aws_security_group" "redis_sg" {
 resource "aws_security_group" "es" {
   name        = "elasticsearch-sg"
   description = "Managed by Terraform"
-  vpc_id      = data.aws_vpc.Unity-Dev-VPC.id
+  vpc_id      = data.aws_vpc.unity-test-env.id
 
   ingress {
     from_port       = 443
