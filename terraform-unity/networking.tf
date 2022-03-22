@@ -10,7 +10,7 @@
 
 resource "aws_subnet" "subnet-uno" {
   cidr_block        = cidrsubnet(data.aws_vpc.Unity-Dev-VPC.cidr_block, 3, 1)
-  vpc_id            = data.aws_vpc.unity-test-env.id
+  vpc_id            = data.aws_vpc.Unity-Dev-VPC.id
   availability_zone = "us-west-2a"
   tags = {
     Deployment = "unity-demo"
@@ -19,7 +19,7 @@ resource "aws_subnet" "subnet-uno" {
 
 resource "aws_subnet" "subnet-two" {
   cidr_block        = cidrsubnet(data.aws_vpc.Unity-Dev-VPC.cidr_block, 4, 1)
-  vpc_id            = data.aws_vpc.unity-test-env.id
+  vpc_id            = data.aws_vpc.Unity-Dev-VPC.id
   availability_zone = "us-west-2b"
   tags = {
     Deployment = "unity-demo"
