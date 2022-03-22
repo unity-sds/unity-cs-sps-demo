@@ -47,7 +47,7 @@ resource "aws_security_group" "ingress-all-test" {
 
 resource "aws_security_group" "redis_sg" {
   name   = "redis-sg"
-  vpc_id = data.aws_vpc.unity-test-env.id
+  vpc_id = data.aws_vpc.Unity-Dev-VPC.id
 
   ingress {
     protocol  = "tcp"
