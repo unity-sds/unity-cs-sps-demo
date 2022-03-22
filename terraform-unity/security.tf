@@ -1,6 +1,6 @@
 resource "aws_security_group" "ingress-all-test" {
   name   = "allow-all-sg"
-  vpc_id = data.aws_vpc.Unity-Dev-VPC.id
+  vpc_id = data.aws_vpc.unity-test-env.id
   ingress {
     cidr_blocks = [
       "0.0.0.0/0"
@@ -47,7 +47,7 @@ resource "aws_security_group" "ingress-all-test" {
 
 resource "aws_security_group" "redis_sg" {
   name   = "redis-sg"
-  vpc_id = data.aws_vpc.Unity-Dev-VPC.id
+  vpc_id = data.aws_vpc.unity-test-env.id
 
   ingress {
     protocol  = "tcp"
