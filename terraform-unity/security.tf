@@ -1,6 +1,6 @@
 resource "aws_security_group" "ingress-all-test" {
   name   = "allow-all-sg"
-  vpc_id = data.aws_vpc.unity-test-env.id
+  vpc_id = data.aws_vpc.Unity-Dev-VPC.id
   ingress {
     cidr_blocks = [
       "0.0.0.0/0"
@@ -76,7 +76,7 @@ resource "aws_security_group" "redis_sg" {
 resource "aws_security_group" "es" {
   name        = "elasticsearch-sg"
   description = "Managed by Terraform"
-  vpc_id      = data.aws_vpc.unity-test-env.id
+  vpc_id      = data.aws_vpc.Unity-Dev-VPC.id
 
   ingress {
     from_port       = 443
