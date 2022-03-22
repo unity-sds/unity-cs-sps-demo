@@ -5,7 +5,12 @@ variable "ami_key_pair_name" { default = "unity-cs-smolensk" }
 #variable "vpc_id" { default = "vpc-0fd177185e450d73d" }
 variable "vpc_id" { default = "vpc-0106218dbddd3a753" }
 
+# data "aws_vpc" "unity-test-env" {
+#   id         = var.vpc_id
+#   cidr_block = "10.0.0.0/16"
+# }
+
 data "aws_vpc" "unity-test-env" {
   id         = var.vpc_id
-  cidr_block = "10.0.0.0/16"
+  cidr_block = "10.52.8.0/22"
 }
