@@ -9,7 +9,7 @@
 # }
 
 resource "aws_subnet" "subnet-uno" {
-  cidr_block        = cidrsubnet(data.aws_vpc.unity-test-env.cidr_block, 3, 1)
+  cidr_block        = "10.52.8.0/24"
   vpc_id            = data.aws_vpc.unity-test-env.id
   availability_zone = "us-west-2a"
   tags = {
@@ -18,7 +18,7 @@ resource "aws_subnet" "subnet-uno" {
 }
 
 resource "aws_subnet" "subnet-two" {
-  cidr_block        = cidrsubnet(data.aws_vpc.unity-test-env.cidr_block, 4, 1)
+  cidr_block        = "10.52.9.0/24"
   vpc_id            = data.aws_vpc.unity-test-env.id
   availability_zone = "us-west-2b"
   tags = {
