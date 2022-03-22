@@ -10,7 +10,7 @@ variable "vpc_id" { default = "vpc-0106218dbddd3a753" }
 #   cidr_block = "10.0.0.0/16"
 # }
 
-data "aws_vpc" "unity-test-env" {
+data "aws_vpc" "Unity-Dev-VPC" {
   id         = var.vpc_id
   cidr_block = "10.52.8.0/22"
 }
