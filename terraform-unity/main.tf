@@ -36,6 +36,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-west-2"
+  profile = "jpl-unity-cs"
+  region  = "us-west-2"
 }
 
