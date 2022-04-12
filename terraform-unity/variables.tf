@@ -7,5 +7,5 @@ variable "vpc_id" { default = "vpc-0106218dbddd3a753" }
 data "aws_vpc" "unity-test-env" {
   id         = var.vpc_id
   cidr_block = "10.0.0.0/16"
-} 
+}
 
