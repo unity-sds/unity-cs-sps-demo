@@ -25,7 +25,7 @@ resource "aws_instance" "unity-ec2-instance" {
     device_name = "/dev/sda1"
     volume_size = 50
   }
-  subnet_id = aws_subnet.subnet-uno.id
+  subnet_id = data.aws_subnet.subnet-uno.id
 }
 
 resource "aws_instance" "unity-ec2-instance2" {
@@ -41,7 +41,7 @@ resource "aws_instance" "unity-ec2-instance2" {
     device_name = "/dev/sda1"
     volume_size = 50
   }
-  subnet_id = aws_subnet.subnet-uno.id
+  subnet_id = data.aws_subnet.subnet-uno.id
 }
 
 resource "aws_instance" "unity-ec2-instance3" {
@@ -58,5 +58,5 @@ resource "aws_instance" "unity-ec2-instance3" {
     device_name = "/dev/sda1"
     volume_size = 50
   }
-  subnet_id = aws_subnet.subnet-uno.id
+  subnet_id = data.aws_subnet.subnet-uno.id
 }

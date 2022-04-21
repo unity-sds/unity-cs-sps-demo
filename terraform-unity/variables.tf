@@ -8,3 +8,11 @@ data "aws_vpc" "unity-test-env" {
   id         = "vpc-0106218dbddd3a753"
   cidr_block = "10.0.0.0/16"
 }
+
+data "aws_subnet" "subnet-uno" {
+  id         = "subnet-059bc4f467275b59d"
+}
+
+data "aws_subnet" "subnet-two" {
+  id         = "subnet-0ebdd997cc3ebe58d"
+}

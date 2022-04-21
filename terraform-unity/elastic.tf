@@ -12,8 +12,8 @@ resource "aws_elasticsearch_domain" "unity-sample" {
   }
   vpc_options {
     subnet_ids = [
-      aws_subnet.subnet-uno.id,
-      aws_subnet.subnet-two.id,
+      data.aws_subnet.subnet-uno.id,
+      data.aws_subnet.subnet-two.id,
     ]
 
     security_group_ids = [aws_security_group.es.id]

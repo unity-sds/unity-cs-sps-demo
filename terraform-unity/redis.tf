@@ -13,5 +13,5 @@ resource "aws_memorydb_cluster" "unity-db-sample" {
 
 resource "aws_memorydb_subnet_group" "example" {
   name       = "my-subnet-group"
-  subnet_ids = [aws_subnet.subnet-uno.id, aws_subnet.subnet-two.id]
+  subnet_ids = [data.aws_subnet.subnet-uno.id, data.aws_subnet.subnet-two.id]
 }
