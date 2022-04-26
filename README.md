@@ -5,23 +5,27 @@
 
 ![logo](https://user-images.githubusercontent.com/3129134/163255685-857aa780-880f-4c09-b08c-4b53bf4af54d.png)
 
-<h1 align="center">[INSERT YOUR REPO / PROJ NAME HERE]</h1>
-<!-- ☝️ Replace with your repo name ☝️ -->
+<h1 align="center">Unity SPS Prototype</h1>
 
 </div>
 
-<pre align="center">[INSERT A SINGLE SENTENCE DESCRIBING THE PURPOSE OF YOUR REPO / PROJ]</pre>
-<!-- ☝️ Replace with a single sentence describing the purpose of your repo / proj ☝️ -->
+<pre align="center">This repository is the prototype deployment for the Unity SPS pipeline.</pre>
 
 <!-- Header block for project -->
 
 [INSERT YOUR BADGES HERE (SEE: https://shields.io)] [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 <!-- ☝️ Add badges via: https://shields.io e.g. ![](https://img.shields.io/github/your_chosen_action/your_org/your_repo) ☝️ -->
 
-[INSERT SCREENSHOT OF YOUR SOFTWARE, IF APPLICABLE]
+![Unity SPS demo diagram](sps-demo.drawio.svg)
 <!-- ☝️ Screenshot of your software (if applicable) via ![](https://uri-to-your-screenshot) ☝️ -->
 
-[INSERT MORE DETAILED DESCRIPTION OF YOUR REPOSITORY HERE]
+For details please check the [terraform-unity](https://github.com/unity-sds/unity-cs-sps-demo/tree/main/terraform-unity)
+folder where our Helm templates form the crux of the deployment.
+
+This demo is designed to make use of a number of different services and demonstrate the interoperability between them each.
+
+This repository also has a [Github action](https://github.com/unity-sds/unity-cs-sps-demo/tree/main/.github/workflows)
+to build the containers required to deploy this project.
 <!-- ☝️ Replace with a more detailed description of your repository, including why it was made and whom its intended for.  ☝️ -->
 
 [INSERT LIST OF IMPORTANT PROJECT / REPO LINKS HERE]
