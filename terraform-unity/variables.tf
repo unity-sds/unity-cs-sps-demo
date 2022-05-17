@@ -10,9 +10,9 @@ data "aws_vpc" "unity-test-env" {
 }
 
 data "aws_subnet" "subnet-uno" {
-  id         = "subnet-059bc4f467275b59d"
+  id = "subnet-059bc4f467275b59d"
 }
 
 data "aws_subnet" "subnet-two" {
-  id         = "subnet-0ebdd997cc3ebe58d"
+  id = "subnet-0ebdd997cc3ebe58d"
 }
