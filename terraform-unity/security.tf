@@ -1,5 +1,5 @@
 resource "aws_security_group" "ingress-all-test" {
-  name   = "allow-all-sg"
+  name   = "unity-sps-demo-allow-all-security-group"
   vpc_id = data.aws_vpc.unity-test-env.id
   ingress {
     cidr_blocks = [
