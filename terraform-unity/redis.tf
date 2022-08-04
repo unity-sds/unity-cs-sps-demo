@@ -12,6 +12,6 @@ resource "aws_memorydb_cluster" "unity-db-sample" {
 }
 
 resource "aws_memorydb_subnet_group" "example" {
-  name       = "my-subnet-group"
+  name       = "unity-sps-demo-subnet-group"
   subnet_ids = [data.aws_subnet.subnet-uno.id, data.aws_subnet.subnet-two.id]
 }
