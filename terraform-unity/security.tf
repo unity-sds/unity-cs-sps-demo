@@ -46,7 +46,7 @@ resource "aws_security_group" "ingress-all-test" {
 }
 
 resource "aws_security_group" "redis_sg" {
-  name   = "redis-sg"
+  name   = "unity-sps-redis-sg"
   vpc_id = data.aws_vpc.unity-test-env.id
 
   ingress {
@@ -74,7 +74,7 @@ resource "aws_security_group" "redis_sg" {
 }
 
 resource "aws_security_group" "es" {
-  name        = "elasticsearch-sg"
+  name        = "unity-sps-elasticsearch-sg"
   description = "Managed by Terraform"
   vpc_id      = data.aws_vpc.unity-test-env.id
 
