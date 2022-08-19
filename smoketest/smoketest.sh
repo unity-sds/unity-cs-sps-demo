@@ -1,3 +1,3 @@
 #!/bin/sh
 
-echo "This is the placeholder for smoketests"
+echo 'This is the placeholder for smoketests'
