@@ -1,3 +1,3 @@
 #!/bin/sh
 
-python smoketest.py
+echo "This is the placeholder for smoketests"
